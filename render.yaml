@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: phisheye-backend
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: USE_URLHAUS_LIVE
+        value: "1"
