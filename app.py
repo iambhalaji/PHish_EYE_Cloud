@@ -447,7 +447,7 @@ PROTECTED_BRANDS: Dict[str, dict] = {
     "Microsoft": {
         "domains": {"microsoft.com", "live.com", "office.com", "outlook.com", "azure.com", "msn.com", "sharepoint.com", "microsoftonline.com"},
         "asset_hosts": {"aadcdn.msftauth.net", "aadcdn.msauth.net", "logincdn.msauth.net", "c.s-microsoft.com", "img-prod-cms-rt-microsoft-com.akamaized.net"},
-        "keywords": ("microsoft", "office 365", "office365", "outlook", "onedrive", "azure"),
+        "keywords": ("microsoft", "office 365", "office365", "outlook", "onedrive", "azure", "sign in to your account"),
         "phashes": [0xF0F0E8C8D2B49681, 0xCC993366CC993366],
     },
     "Google": {
@@ -462,6 +462,72 @@ PROTECTED_BRANDS: Dict[str, dict] = {
         "keywords": ("paypal", "log in to your paypal account"),
         "phashes": [0xE6C9933C6996C33C, 0xC396693CC993663C],
     },
+    "Apple": {
+        "domains": {"apple.com", "icloud.com", "cdn-apple.com"},
+        "asset_hosts": {"www.apple.com", "appleid.cdn-apple.com"},
+        "keywords": ("apple id", "icloud", "sign in with apple", "apple account"),
+        "phashes": [0x183C7E7E7E3C1800, 0x3C7EFFDBDBFF7E3C],
+    },
+    "Amazon": {
+        "domains": {"amazon.com", "amazon.in", "amazon.co.uk", "amazon.de", "amazon.co.jp", "amazonaws.com", "ssl-images-amazon.com", "media-amazon.com"},
+        "asset_hosts": {"images-na.ssl-images-amazon.com", "m.media-amazon.com", "images-eu.ssl-images-amazon.com"},
+        "keywords": ("amazon sign-in", "amazon sign in", "amazon.in", "amazon.com"),
+        "phashes": [0x9C6339C6639CC639],
+    },
+    "Netflix": {
+        "domains": {"netflix.com", "nflxext.com", "nflximg.net", "nflxso.net"},
+        "asset_hosts": {"assets.nflxext.com", "occ-0.nflxso.net"},
+        "keywords": ("netflix", "sign in to netflix"),
+        "phashes": [0xC6C6E6F6FECEC6C6],
+    },
+    "Facebook / Meta": {
+        "domains": {"facebook.com", "fb.com", "meta.com", "messenger.com"},
+        "asset_hosts": {"static.xx.fbcdn.net", "facebook.com"},
+        "keywords": ("facebook", "log into facebook", "meta account"),
+        "phashes": [0x3C3C3C3C3C3C3C3C, 0x1838787878381800],
+    },
+    "Instagram": {
+        "domains": {"instagram.com", "cdninstagram.com"},
+        "asset_hosts": {"static.cdninstagram.com"},
+        "keywords": ("instagram", "log in to instagram"),
+        "phashes": [0x3C7EFFFFDBE7C381],
+    },
+    "WhatsApp": {
+        "domains": {"whatsapp.com", "web.whatsapp.com"},
+        "asset_hosts": {"static.whatsapp.net"},
+        "keywords": ("whatsapp", "whatsapp web"),
+        "phashes": [0x183C7E7E7E3C1800],
+    },
+    "GitHub": {
+        "domains": {"github.com", "githubusercontent.com", "githubassets.com"},
+        "asset_hosts": {"github.githubassets.com", "avatars.githubusercontent.com"},
+        "keywords": ("sign in to github", "github"),
+        "phashes": [0x3C7EFFFFDBE7C381],
+    },
+    "Steam": {
+        "domains": {"steampowered.com", "steamcommunity.com"},
+        "asset_hosts": {"community.cloudflare.steamstatic.com", "store.cloudflare.steamstatic.com"},
+        "keywords": ("sign in to steam", "steam community", "valve steam"),
+        "phashes": [0x78FC7C3838FC7830],
+    },
+    "Discord": {
+        "domains": {"discord.com", "discordapp.com"},
+        "asset_hosts": {"assets-global.website-files.com", "cdn.discordapp.com"},
+        "keywords": ("discord", "welcome back! - discord"),
+        "phashes": [0x3C7EFFFFFFFF7E3C],
+    },
+    "Telegram": {
+        "domains": {"telegram.org", "t.me"},
+        "asset_hosts": {"telegram.org"},
+        "keywords": ("telegram web", "telegram messenger"),
+        "phashes": [0x00183C7E7E3C1800],
+    },
+    "State Bank of India (SBI)": {
+        "domains": {"onlinesbi.sbi", "sbi.co.in", "sbicard.com"},
+        "asset_hosts": {"retail.onlinesbi.sbi", "www.onlinesbi.sbi", "sbi.co.in"},
+        "keywords": ("state bank of india", "onlinesbi", "sbi yono", "sbi netbanking"),
+        "phashes": [0x3C7EFFDBDBFF7E3C],
+    },
     "HDFC Bank": {
         "domains": {"hdfcbank.com", "hdfc.com"},
         "asset_hosts": {"www.hdfcbank.com", "netbanking.hdfcbank.com", "v.hdfcbank.com"},
@@ -474,41 +540,53 @@ PROTECTED_BRANDS: Dict[str, dict] = {
         "keywords": ("icici bank", "icicibank", "icici netbanking"),
         "phashes": [0xD86C369B4DA66331],
     },
-    "State Bank of India (SBI)": {
-        "domains": {"onlinesbi.sbi", "sbi.co.in", "sbicard.com"},
-        "asset_hosts": {"retail.onlinesbi.sbi", "www.onlinesbi.sbi", "sbi.co.in"},
-        "keywords": ("state bank of india", "onlinesbi", "sbi yono"),
+    "Axis Bank": {
+        "domains": {"axisbank.com"},
+        "asset_hosts": {"www.axisbank.com"},
+        "keywords": ("axis bank", "axis netbanking"),
+        "phashes": [0x81C3E7FFFFE7C381],
+    },
+    "Chase Bank": {
+        "domains": {"chase.com"},
+        "asset_hosts": {"static.chasecdn.com", "www.chase.com"},
+        "keywords": ("chase online", "chase bank", "sign in - chase.com"),
+        "phashes": [0x007E7E7E7E7E7E00],
+    },
+    "Bank of America": {
+        "domains": {"bankofamerica.com", "bofa.com"},
+        "asset_hosts": {"www.bankofamerica.com"},
+        "keywords": ("bank of america", "bofa login", "bofa sign in"),
+        "phashes": [0xFF00FF00FF00FF00],
+    },
+    "Wells Fargo": {
+        "domains": {"wellsfargo.com"},
+        "asset_hosts": {"www.wellsfargo.com"},
+        "keywords": ("wells fargo", "sign on to wells fargo"),
+        "phashes": [0xFFFF00000000FFFF],
+    },
+    "MetaMask": {
+        "domains": {"metamask.io"},
+        "asset_hosts": {"metamask.io"},
+        "keywords": ("metamask", "import an account with secret recovery phrase", "metamask wallet"),
+        "phashes": [0x81C3E7FFDBE7C381],
+    },
+    "Coinbase": {
+        "domains": {"coinbase.com"},
+        "asset_hosts": {"images.ctfassets.net", "www.coinbase.com"},
+        "keywords": ("coinbase", "sign in to coinbase"),
         "phashes": [0x3C7EFFDBDBFF7E3C],
+    },
+    "Binance": {
+        "domains": {"binance.com"},
+        "asset_hosts": {"bin.bnbstatic.com"},
+        "keywords": ("binance", "binance login"),
+        "phashes": [0x183C7EFFE7C38100],
     },
     "Flipkart": {
         "domains": {"flipkart.com", "flixcart.com"},
         "asset_hosts": {"static-assets-web.flixcart.com", "img1a.flixcart.com", "rukminim1.flixcart.com", "rukminim2.flixcart.com"},
         "keywords": ("flipkart",),
         "phashes": [0x78FC7C3838FC7830],
-    },
-    "Amazon": {
-        "domains": {"amazon.com", "amazon.in", "amazon.co.uk", "amazon.de", "amazon.co.jp", "amazonaws.com", "ssl-images-amazon.com", "media-amazon.com"},
-        "asset_hosts": {"images-na.ssl-images-amazon.com", "m.media-amazon.com", "images-eu.ssl-images-amazon.com"},
-        "keywords": ("amazon sign-in", "amazon.in", "amazon.com"),
-        "phashes": [0x9C6339C6639CC639],
-    },
-    "Apple": {
-        "domains": {"apple.com", "icloud.com", "cdn-apple.com"},
-        "asset_hosts": {"www.apple.com", "appleid.cdn-apple.com"},
-        "keywords": ("apple id", "icloud", "sign in with apple"),
-        "phashes": [0x183C7E7E7E3C1800],
-    },
-    "Netflix": {
-        "domains": {"netflix.com", "nflxext.com", "nflximg.net", "nflxso.net"},
-        "asset_hosts": {"assets.nflxext.com", "occ-0.nflxso.net"},
-        "keywords": ("netflix",),
-        "phashes": [0xC6C6E6F6FECEC6C6],
-    },
-    "GitHub": {
-        "domains": {"github.com", "githubusercontent.com", "githubassets.com"},
-        "asset_hosts": {"github.githubassets.com", "avatars.githubusercontent.com"},
-        "keywords": ("sign in to github", "github"),
-        "phashes": [0x3C7EFFFFDBE7C381],
     },
 }
 
@@ -744,6 +822,7 @@ def parent_domains(domain: str) -> List[str]:
     return [".".join(parts[i:]) for i in range(len(parts) - 1)] or [domain]
 
 
+# Known shared/free hosting platforms heavily abused by disposable phishing kits
 SHARED_HOSTING_SUFFIXES = (
     "pages.dev", "github.io", "vercel.app", "netlify.app", "web.app", "firebaseapp.com",
     "onrender.com", "workers.dev", "ngrok-free.app", "ngrok-free.dev", "ngrok.io",
@@ -754,11 +833,16 @@ SHARED_HOSTING_SUFFIXES = (
     "cutt.ly", "is.gd", "replit.dev", "fly.dev", "railway.app", "duckdns.org",
 )
 
-SUBDOMAIN_SPOOF_KEYWORDS = (
-    "login", "signin", "verify", "verification", "secure", "account", "update",
-    "banking", "wallet", "confirm", "password", "auth", "portal", "phish", "fake",
+# Accredited/regulated TLDs that require government or university charter verification
+ACCREDITED_INSTITUTION_TLDS = {
+    "edu", "gov", "mil", "ac.uk", "gov.uk", "gov.in", "nic.in", "ac.in", "edu.in", "edu.au", "gov.au"
+}
+
+# Subdomain brand spoof keywords (e.g. paypal.somesite.com or microsoft.user-portal.net)
+SUBDOMAIN_BRAND_SPOOFS = (
     "paypal", "microsoft", "google", "apple", "netflix", "hdfc", "icici", "sbi",
-    "chase", "amazon", "flipkart",
+    "chase", "amazon", "flipkart", "meta", "facebook", "instagram", "whatsapp",
+    "coinbase", "binance", "metamask", "steam", "discord", "telegram", "bofa",
 )
 
 # Piracy, mirror streaming, cracked software, APK-mod, and adware-lure keywords
@@ -801,8 +885,10 @@ def lookup(table: str, domain: str):
             return None
         apex = get_apex_domain(domain)
         sub_part = domain[: -len(apex)].rstrip(".") if apex and domain.endswith(apex) else ""
-        if sub_part and any(kw in sub_part for kw in SUBDOMAIN_SPOOF_KEYWORDS):
-            return None
+        # Only disqualify if subdomain contains an unauthorized brand spoof on a different domain
+        if sub_part and any(kw in sub_part for kw in SUBDOMAIN_BRAND_SPOOFS):
+            if not any(kw in apex for kw in SUBDOMAIN_BRAND_SPOOFS):
+                return None
     cols = "source" if table == "blacklist" else "1"
     with closing(db()) as conn:
         for d in parent_domains(domain):
@@ -846,6 +932,10 @@ class DOMSignals(BaseModel):
     suspicious_download_links: int = 0
     scam_intent_hits: List[str] = []
     page_text_sample: str = ""
+    form_action_destinations: List[str] = []
+    has_credential_inputs: bool = False
+    credential_input_types: List[str] = []
+    cross_origin_form_detected: bool = False
 
 
 class ScanRequest(BaseModel):
@@ -962,7 +1052,7 @@ def analyze_url(req: ScanRequest):
     # --- 1) Domain Age & WHOIS / RDAP Check ---
     domain_age_days = get_domain_age_days(domain)
     whois_override_score: Optional[float] = None
-    layer_used = "Layer 2: Deep AI + DOM Shield"
+    layer_used = "Layer 2: 3-Factor Correlation Matrix"
 
     # --- 2) Visual / Logo & Favicon Similarity Check (pHash Computer Vision) ---
     brand_hit = detect_brand_impersonation(
@@ -971,51 +1061,13 @@ def analyze_url(req: ScanRequest):
         logo_urls=sig.logo_urls,
         logo_hints=sig.logo_hints,
         page_title=sig.page_title,
-        has_password=(sig.password_inputs > 0),
+        has_password=(sig.password_inputs > 0 or sig.has_credential_inputs),
     )
 
-    # --- 3) Tight Zero-Day Domain, Hosting, Mirror/Piracy & Adware Heuristics ---
+    # --- 3) Live Intent & Keyword Forensics ---
     tld = domain.rsplit(".", 1)[-1].lower() if "." in domain else ""
     risk_kw = has_potential_risk_keyword(domain) or has_potential_risk_keyword(sig.page_title)
 
-    if risk_kw:
-        dom_penalty += 56.0
-        layer_used = "Layer 2: Grey-Market / Mirror / Adware Shield"
-        reasons.insert(
-            0,
-            f"Potential risk domain ('{risk_kw}' in {domain}) — unauthorized mirror, streaming, or APK/adware distribution site",
-        )
-        if tld in CAUTION_TLDS or tld == "app" or sig.iframe_count >= 1 or sig.password_inputs > 0:
-            whois_override_score = max(whois_override_score or 0.0, 68.5)
-
-    if is_shared_hosting(domain):
-        dom_penalty += 32.0
-        reasons.append(f"Hosted on shared/free subdomain platform ({get_apex_domain(domain)}) frequently abused by phishing kits")
-        if hostname_has_suspicious or path_has_suspicious or sig.password_inputs > 0:
-            whois_override_score = max(whois_override_score or 0.0, 92.5)
-
-    if feats_v2_data.get("brand_in_subdomain_or_path"):
-        whois_override_score = max(whois_override_score or 0.0, 91.0)
-        reasons.insert(0, f"Brand name impersonation detected in URL structure on unauthorized domain ({domain})")
-
-    if feats_v2_data.get("is_risky_tld"):
-        dom_penalty += 34.0
-        reasons.append(f"High-risk top-level domain (.{tld})")
-    elif tld in CAUTION_TLDS:
-        dom_penalty += 28.0
-        reasons.append(f"Unverified domain on commonly abused TLD (.{tld})")
-
-    if sig.iframe_count >= 2:
-        dom_penalty += 18.0
-        reasons.append(f"Detected {sig.iframe_count} embedded iframes (common in ad-redirect / mirror pages)")
-
-    # --- 4) Live Page Behavioral, Exfiltration, Intent & TLS Certificate Signals ---
-    if sig.exfil_webhooks:
-        whois_override_score = max(whois_override_score or 0.0, 99.1)
-        layer_used = "Layer 2: Live Exfiltration & Phishing Kit Shield"
-        reasons.insert(0, f"Critical Phishing Kit Indicator: {sig.exfil_webhooks[0]} detected in page source")
-
-    # Combine content.js scam_intent_hits with backend NLP check on page_text_sample
     intent_hits = list(sig.scam_intent_hits)
     text_sample_low = f"{sig.page_title} {sig.page_text_sample}".lower()
     backend_intent_rules = (
@@ -1032,104 +1084,155 @@ def analyze_url(req: ScanRequest):
         if kw_phrase in text_sample_low and kw_label not in intent_hits:
             intent_hits.append(kw_label)
 
-    if intent_hits:
-        dom_penalty += 44.0
-        layer_used = "Layer 2: Live NLP Page Intent Shield"
-        reasons.insert(0, f"Page Content Intent Analysis: {intent_hits[0]}")
-        if sig.password_inputs > 0 or "drainer" in intent_hits[0].lower() or "coercion" in intent_hits[0].lower():
-            whois_override_score = max(whois_override_score or 0.0, 91.5)
-
-    if sig.popunder_scripts:
-        dom_penalty += 28.0
-        reasons.append(f"Detected adware / pop-under redirect network ({sig.popunder_scripts[0]})")
-
-    if sig.suspicious_download_links >= 1:
-        dom_penalty += 26.0
-        reasons.append(f"Page contains {sig.suspicious_download_links} direct executable / APK / torrent download link(s)")
-
     cert_age_days, invalid_cert = get_tls_cert_info(domain)
-    if invalid_cert:
-        dom_penalty += 45.0
-        reasons.insert(0, f"Invalid or self-signed SSL/TLS certificate presented by {domain}")
-    elif cert_age_days is not None and cert_age_days <= 3:
-        if sig.password_inputs > 0 or hostname_has_suspicious or (domain_age_days is not None and domain_age_days < 30):
-            dom_penalty += 28.0
-            reasons.append(f"Freshly issued SSL/TLS certificate ({cert_age_days} day(s) old) on sensitive/unverified origin")
 
-    if host_hyphens >= 2:
-        dom_penalty += 34.0
-        reasons.append(f"Multiple hyphens in domain name ({host_hyphens} hyphens in {domain})")
-    elif host_hyphens == 1 and (hostname_has_suspicious or path_has_suspicious or sig.password_inputs > 0):
-        dom_penalty += 20.0
-        reasons.append(f"Hyphenated domain ({domain}) combined with login/authentication signals")
-
-    if hostname_has_suspicious:
-        dom_penalty += 32.0
-        reasons.append(f"Suspicious authentication/phishing keywords in hostname ({domain})")
-    elif path_has_suspicious and (host_hyphens >= 1 or sig.password_inputs > 0 or ml_prob >= 35):
-        dom_penalty += 18.0
-        reasons.append("Authentication/credential path on unverified domain")
-
-    # Only dampen ML score if the domain is genuinely established (>= 1 yr) AND has zero suspicious domain/hosting signals
-    if (
-        domain_age_days is not None
-        and domain_age_days >= 365
-        and not brand_hit
-        and not risk_kw
-        and not is_shared_hosting(domain)
-        and not sig.external_form_action
-        and not feats["has_ip"]
-        and not hostname_has_suspicious
-        and host_hyphens < 2
-        and tld not in CAUTION_TLDS
-        and not feats_v2_data.get("brand_in_subdomain_or_path")
-        and not feats_v2_data.get("is_risky_tld")
-    ):
-        ml_prob = min(ml_prob * 0.30, 20.0)
-
-    if ml_prob >= THRESHOLD * 100:
-        reasons.append(f"ML model flagged high phishing probability ({ml_prob:.1f}%) for {domain}")
-
-    if feats["has_ip"]:
-        dom_penalty += 35.0
-        reasons.append("URL uses a raw IP address instead of a domain name")
-    if feats["count_at"] > 0:
-        dom_penalty += 30.0
-        reasons.append("URL contains '@' (possible credential-trick redirect)")
-    if sig.password_inputs > 0:
-        dom_penalty += 22.0
-        reasons.append(f"Password input field ({sig.password_inputs}) detected on unverified origin")
-    if sig.external_form_action:
-        dom_penalty += 20.0
-        reasons.append("Form action submits credentials to an external domain")
-    if sig.hidden_inputs > 0 and (ml_prob >= 40 or sig.external_form_action or sig.password_inputs > 0):
-        dom_penalty += 5.0
-        reasons.append(f"Detected {sig.hidden_inputs} hidden tracking/payload input field(s)")
-    if sig.context_menu_disabled:
-        dom_penalty += 10.0
-        reasons.append("Context menu (right-click inspection) disabled by script")
-
-    if domain_age_days is not None:
-        if domain_age_days < 14 and sig.password_inputs > 0:
-            whois_override_score = 99.0
-            layer_used = "Layer 2: WHOIS Domain Age + Credential Shield"
-            reasons.insert(
-                0,
-                f"Newly registered domain ({domain_age_days} days old via WHOIS/RDAP) requesting password credentials — 99% Phishing Confidence",
-            )
-        elif domain_age_days < 14:
-            dom_penalty += 35.0
-            reasons.insert(0, f"Newly registered domain ({domain_age_days} days old — registered < 14 days ago)")
-        elif domain_age_days < 60:
-            dom_penalty += 15.0
-            reasons.append(f"Recently registered domain ({domain_age_days} days old via WHOIS/RDAP)")
-
+    # -------------------------------------------------------------
+    # 3-FACTOR CORRELATION MATRIX (Zero-Day Invariant Engine)
+    # -------------------------------------------------------------
+    # Vector A: Identity Spoofing / Impersonation
+    has_identity_spoof = False
+    identity_reason = None
     if brand_hit:
-        whois_override_score = max(whois_override_score or 0.0, 99.2)
-        layer_used = f"Layer 2: Visual pHash + Brand Shield ({brand_hit['brand']})"
-        reasons.insert(0, brand_hit["reason"])
+        has_identity_spoof = True
+        identity_reason = brand_hit["reason"]
+    elif feats_v2_data.get("brand_in_subdomain_or_path"):
+        has_identity_spoof = True
+        identity_reason = f"Brand name impersonation detected in URL structure on unauthorized domain ({domain})"
 
-    final_score = min(99.9, ml_prob + dom_penalty)
+    # Vector B: Credential / Asset Harvesting Action
+    has_cred_action = (sig.password_inputs > 0) or sig.has_credential_inputs
+    has_drainer_action = any("drainer" in h.lower() or "seed phrase" in h.lower() for h in intent_hits)
+    has_coercion = any("coercion" in h.lower() or "suspended" in h.lower() for h in intent_hits)
+
+    # Vector C: Infrastructure / Origin Anomaly
+    infra_high_risk = False
+    infra_moderate_risk = False
+    infra_reasons = []
+
+    if domain_age_days is not None and domain_age_days < 14:
+        infra_high_risk = True
+        infra_reasons.append(f"Newly registered domain ({domain_age_days} days old via WHOIS/RDAP)")
+    elif domain_age_days is not None and domain_age_days < 60:
+        infra_moderate_risk = True
+        infra_reasons.append(f"Recently registered domain ({domain_age_days} days old via WHOIS/RDAP)")
+
+    if invalid_cert:
+        infra_high_risk = True
+        infra_reasons.append("Invalid or self-signed SSL/TLS certificate")
+    elif cert_age_days is not None and cert_age_days <= 3:
+        infra_moderate_risk = True
+        infra_reasons.append(f"Freshly issued SSL/TLS certificate ({cert_age_days} day(s) old)")
+
+    if is_shared_hosting(domain):
+        infra_high_risk = True
+        infra_reasons.append(f"Hosted on shared/free subdomain platform ({get_apex_domain(domain)})")
+
+    if feats_v2_data.get("is_risky_tld"):
+        infra_high_risk = True
+        infra_reasons.append(f"High-risk top-level domain (.{tld})")
+    elif tld in CAUTION_TLDS:
+        infra_moderate_risk = True
+        infra_reasons.append(f"Unverified domain on high-abuse TLD (.{tld})")
+
+    if feats.get("has_ip"):
+        infra_high_risk = True
+        infra_reasons.append("URL uses a raw IP address instead of a domain name")
+
+    # -------------------------------------------------------------
+    # DECISION MATRIX (Zero-Day Invariant Evaluation)
+    # -------------------------------------------------------------
+    is_accredited = any(domain == t or domain.endswith("." + t) for t in ACCREDITED_INSTITUTION_TLDS)
+
+    is_established_clean = (
+        (is_accredited or (domain_age_days is not None and domain_age_days >= 365))
+        and not has_identity_spoof
+        and not is_shared_hosting(domain)
+        and not sig.cross_origin_form_detected
+        and not sig.exfil_webhooks
+        and not has_drainer_action
+        and not risk_kw
+        and not feats.get("has_ip")
+        and not invalid_cert
+        and tld not in CAUTION_TLDS
+    )
+
+    # Case 1: Critical Direct Phishing Invariants (99.0% - 99.9%)
+    if sig.exfil_webhooks:
+        whois_override_score = 99.9
+        layer_used = "Layer 2: Live Exfiltration Shield"
+        reasons.insert(0, f"Critical Phishing Kit Indicator: {sig.exfil_webhooks[0]} detected in page source")
+    elif sig.cross_origin_form_detected and has_cred_action:
+        whois_override_score = 99.8
+        layer_used = "Layer 2: Cross-Origin Credential Form Shield"
+        dest_str = sig.form_action_destinations[0] if sig.form_action_destinations else "external server"
+        reasons.insert(0, f"Deceptive Credential Form: Page collects credentials and posts them to external host ({dest_str})")
+    elif has_identity_spoof and has_cred_action:
+        whois_override_score = 99.7
+        layer_used = "Layer 2: Identity + Credential Invariant Shield"
+        reasons.insert(0, f"{identity_reason} while requesting login credentials")
+    elif has_drainer_action:
+        whois_override_score = 99.5
+        layer_used = "Layer 2: Live NLP Crypto Drainer Shield"
+        reasons.insert(0, f"Page Content Intent Analysis: {intent_hits[0]}")
+    elif has_cred_action and infra_high_risk:
+        whois_override_score = 99.0
+        layer_used = "Layer 2: Zero-Day Credential Shield"
+        reasons.insert(0, f"{infra_reasons[0]} requesting sensitive user credentials")
+    elif has_identity_spoof:
+        # Brand spoofed without password field yet (e.g. decoy landing page)
+        whois_override_score = 94.0
+        layer_used = "Layer 2: Brand Impersonation Shield"
+        reasons.insert(0, identity_reason)
+    elif risk_kw:
+        whois_override_score = 85.0 if (tld in CAUTION_TLDS or tld == "app" or sig.iframe_count >= 1) else 68.5
+        layer_used = "Layer 2: Grey-Market / Mirror / Adware Shield"
+        reasons.insert(0, f"Potential risk domain ('{risk_kw}' in {domain}) — unauthorized mirror, streaming, or APK/adware distribution site")
+    elif intent_hits and "apk" in intent_hits[0].lower():
+        whois_override_score = 88.0
+        layer_used = "Layer 2: Live NLP Mod APK Shield"
+        reasons.insert(0, f"Page Content Intent Analysis: {intent_hits[0]}")
+    elif has_coercion and has_cred_action:
+        whois_override_score = 92.0
+        layer_used = "Layer 2: Social Engineering Coercion Shield"
+        reasons.insert(0, f"Social Engineering Coercion: {intent_hits[0]} with credential prompt")
+
+    # Case 2: Established Clean Domains (Zero False Positives on University/Corporate Logins)
+    if is_established_clean:
+        final_score = min(ml_prob * 0.12, 12.0)
+        layer_used = "Layer 2: Verified Authority Origin"
+    else:
+        # Calibrated scoring for unverified origins
+        penalty = 0.0
+        if infra_high_risk:
+            penalty += 34.0
+            reasons.extend(infra_reasons)
+        elif infra_moderate_risk:
+            penalty += 18.0
+            reasons.extend(infra_reasons)
+
+        if has_cred_action:
+            penalty += 16.0
+            reasons.append(f"Credential input field detected on unverified origin ({domain})")
+
+        if sig.popunder_scripts:
+            penalty += 24.0
+            reasons.append(f"Detected adware/pop-under redirect network ({sig.popunder_scripts[0]})")
+
+        if sig.suspicious_download_links >= 1:
+            penalty += 20.0
+            reasons.append(f"Page contains {sig.suspicious_download_links} direct executable/APK/torrent download link(s)")
+
+        if sig.iframe_count >= 2:
+            penalty += 14.0
+            reasons.append(f"Detected {sig.iframe_count} embedded iframes")
+
+        # Blend base threat and penalties
+        if not infra_high_risk and not has_identity_spoof and not sig.exfil_webhooks:
+            # Without hard attack invariants, unverified login pages stay in MODERATE (35-48%)
+            final_score = min(48.0, max(25.0, (ml_prob * 0.40) + penalty))
+        else:
+            final_score = min(99.9, ml_prob + penalty)
+
     if whois_override_score is not None:
         final_score = max(final_score, whois_override_score)
 
